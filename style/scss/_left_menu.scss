@@ -16,15 +16,24 @@
         > .item{
             padding-top: 0;
         }
+    }
+}
 
-        > .form-button{
-            background-color: lightgray;    
-            width: 100px;
-            margin-bottom: 10px;
-        }
-        > .form-button:hover:enabled{
-            background-color: $bs-grey-hover;
-        }
+
+.buttons-container{
+    >.form-button{
+        background-color: lightgray;    
+        width: 70%;
+        height: 24px;
+        margin-bottom: 10px;
+        border-width: 0px;
+        -webkit-transition: 0.25s linear opacity;
+        -moz-transition: 0.25s linear opacity;
+        -o-transition: 0.25s linear opacity;
+        transition: 0.25s linear opacity;
+    }
+    > .form-button:hover:enabled{
+        opacity: .7;
     }
 }
 
@@ -73,6 +82,15 @@
         z-index: 1000;
         > .left-navigation{
             background-color: rgba(140, 140, 140, 0.95);
+        }
+    }
+    .buttons-container{
+        display: flex;
+        justify-content: center;
+        >.form-button{ 
+            width: 40%;
+            height: 30px;
+            margin: 0 5px;
         }
     }
 }

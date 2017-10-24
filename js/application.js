@@ -44,20 +44,24 @@ function loadSources(sources){
   var currentSource = '';
   var icon = '<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>';
   var $sourceContainer = $('.sources-container > ul');
-  $sourceContainer.empty();
-  $sourceContainer.off();
+  clearSources(false);
   for(var i=0; i<sources.length; i++){
     currentSource ='<li><button id="'+sources[i].id+'" class="item tablink" >'+sources[i].name+icon+'</button></li>';
     $sourceContainer.append(currentSource);
   }
-  $sourceContainer.click(function(evt){
+  addEventToSources($sourceContainer);
+}
+
+function addEventToSources($sourceContainer){
+    $sourceContainer.click(function(evt){
     if($(evt.target).is('button')){
       callAPI(false, $(evt.target).attr('id'));
+      $('.sources-container > ul > li > button').removeClass('active')
+      $(evt.target).addClass('active');
       if($('.navbar').css('display') !=='none')
         $('.left-menu').toggleClass('display');
     }
   });
-  $('.clear-button').prop('disabled', false);
 }
 
 function displayArticles(articles){
@@ -96,17 +100,17 @@ function displayText(text){
 
 function emptyResult(){
   $('.clear-button').prop('disabled', true);
-  clearSources();
+  clearSources(true);
   var $articlesContainer = $('#articles-container');
   $articlesContainer.empty();
   $('.sources-container > ul').append('<h3>Empty Search</h3>');
 }
 
-function clearSources(){
+function clearSources(disabled){
   var $sourceContainer = $('.sources-container > ul');
   $sourceContainer.empty();
   $sourceContainer.off();
-  $('.clear-button').prop('disabled', true); 
+  $('.clear-button').prop('disabled', disabled); 
 }
 
 function setLoadContainer(){
