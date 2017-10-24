@@ -1,0 +1,52 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 940px;
+}
+
+.fixed-top{
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: white;
+}
+
+.no-display{
+    display: block !important;
+}
+
+.mt0{
+    margin-top: 0;
+}
+
+.nonIMG{    
+    background-image: url(#{$bs-image-path}/no-img.png);
+}
+
+@media only screen and (min-width: 1200px){
+    .container {
+         width: 1170px; 
+    }
+}
+
+@media only screen and (max-width: 979px) and (min-width: 745px){
+    .container {
+        width: 724px;
+    }
+}
+
+@media only screen and (max-width: 746px){
+    .container {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 746px){
+    .no-display{
+        display: block !important;
+    }
+}
+

@@ -1,0 +1,35 @@
+.navbar{
+    display: none;
+    .navbar-title > span {
+        font-style: normal;
+        font-weight: $bs-font-weight-big;
+        background-color: #222;
+        color: #fff;
+        display: block;
+        height: 45px;
+        line-height: 45px;
+        padding: 0 45px 0 30px;
+        text-align: center;
+    }
+    .navbar-title > .dropdown-icon{
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        font-size: 21px;
+        > i{
+            color: white;
+        }        
+    }
+}
+
+@media only screen and (max-width: 746px){
+    .navbar{
+        display: block;
+        position: fixed !important;
+        width: 100% !important;
+        z-index: 1;
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="style/css/style.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="js/application.js"></script>
+<body>
+  <header class="container fixed-top">
+    <h1 class="brand">
+      BestSecret
+    </h1>
+  </header>
+  <div class="container navbar" >
+    <div class="navbar-title">
+      <span>
+        BestSecret
+      </span>
+      <div class="dropdown-icon">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="left-menu">
+      <div class ="left-navigation">
+          <div class="item">
+              <select class="category-select" >
+                      <option value="" disabled selected>Select Category</option>
+                      <option value="" >All</option>
+                      <option value="business">Business</option>
+                      <option value="entertainment">Entertainment</option>
+                      <option value="gaming">Gaming</option>
+                      <option value="general">General</option>
+                      <option value="music">Music</option>
+                      <option value="politics">Politics</option>
+                      <option value="science-and-nature">Science and Nature</option>
+                      <option value="sport">Sport</option>
+                      <option value="technology">Technology</option>
+              </select>
+          </div>            
+          <div class="item">
+              <select class="language-select">
+                      <option value="" disabled selected>Select Languaje</option>
+                      <option value="en">English</option>
+                      <option value="de">German</option>
+                      <option value="fr">French</option>
+              </select>
+          </div>
+          <button class="submit-button form-button" disabled="disabled"  onclick="callAPI(true)">Get Sources</button>
+          <button class="clear-button form-button" disabled="disabled"  onclick="clearSources()">Clear Sources</button>
+        <div class='sources-container'>
+          <ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="articles-container">
+    </div>
+  </div>
+</body>
+</html>

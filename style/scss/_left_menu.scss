@@ -1,0 +1,78 @@
+.left-menu{
+    position: absolute;
+    width: 230px;    
+    top: 85px;
+    position: fixed;    
+    overflow: auto;    
+    height: 100%;
+    > .left-navigation {
+        font-style: normal;
+        font-weight: $bs-font-weight-normal;
+        background-color: $bs-grey;
+        color: #999;
+        display: block;
+        margin-bottom: 50px;
+        padding: 20px 1.5em;
+        > .item{
+            padding-top: 0;
+        }
+
+        > .form-button{
+            background-color: lightgray;    
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        > .form-button:hover:enabled{
+            background-color: $bs-grey-hover;
+        }
+    }
+}
+
+.item{
+    width: 100%;
+    display: block;
+    padding: 8px 0;
+    text-align: left;
+    border: none;
+    outline: none;
+    white-space: normal;
+    float: none;
+}
+
+
+.sources-container > ul{
+    list-style-type: none;
+    padding-left: 0;
+    > li{
+        border-bottom: 1px solid #ddd;
+        > button > i{
+            float: right;
+            font-size: 14px;
+            color: #636363;
+        }
+        > button:hover{
+            font-weight: $bs-font-weight-big;
+            button > i{
+            font-weight: $bs-font-weight-big;                
+            }
+        }
+    }
+    > h3{
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 746px){
+    .left-menu{ 
+        height: 100%;
+        overflow: auto;
+        width: 100%;
+        position: fixed;
+        display: none;
+        top:44px;
+        z-index: 1000;
+        > .left-navigation{
+            background-color: rgba(140, 140, 140, 0.95);
+        }
+    }
+}

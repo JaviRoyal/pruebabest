@@ -1,0 +1,48 @@
+body{
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+header {
+    border-bottom: 1px solid #ddd;
+    > .brand{
+        text-align: center;
+        color: black;
+    }
+}
+
+button{
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+li > button:hover{
+    color: #000 !important;
+    background-color: transparent;
+}
+
+select{
+    width: 100%;
+    font-style: normal;
+    font-weight: $bs-font-weight-normal;
+    font-size: 14px;
+    line-height: 1.4285714286;
+    box-shadow: none;
+    max-width: 100%;
+    min-width: 50px;
+    background-color: #fff;
+    border-color: #bdbdbd #cacaca #d6d6d6;
+    height: 34px;
+}
+
+@media only screen and (max-width: 746px){
+    body{
+        margin: 0;
+    }
+    header{
+        display: none;
+    }
+}
