@@ -196,7 +196,7 @@ select {
   z-index: 1030;
   background-color: white; }
 
-.no-display {
+.display {
   display: block !important; }
 
 .mt0 {
@@ -215,7 +215,7 @@ select {
   .container {
     width: auto; } }
 @media only screen and (max-width: 746px) {
-  .no-display {
+  .display {
     display: block !important; } }
 
 /*# sourceMappingURL=style.css.map */

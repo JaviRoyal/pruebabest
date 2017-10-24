@@ -3,7 +3,7 @@ $(document).ready( function(){
     $('.submit-button').prop('disabled', false);
   });
   $('.navbar').click(function(e) {
-    $('.left-menu').toggleClass('no-display');
+    $('.left-menu').toggleClass('display');
     $('.left-menu').animate({ scrollTop: 0 }, 1);
   });
 });
@@ -54,7 +54,7 @@ function loadSources(sources){
     if($(evt.target).is('button')){
       callAPI(false, $(evt.target).attr('id'));
       if($('.navbar').css('display') !=='none')
-        $('.left-menu').toggleClass('no-display');
+        $('.left-menu').toggleClass('display');
     }
   });
   $('.clear-button').prop('disabled', false);
@@ -67,27 +67,21 @@ function displayArticles(articles){
   for(var i=0; i<articles.length; i++){
     $articlesContainer.append(createArticle(articles[i]));
   }
-  $('img').each(function() {
-    $(this).one('load', imageLoaded($(this)));
-  });
-}
-
-function imageLoaded(element){
-  var image = new Image();
-  image.src = element.attr("src");
-  if(image.naturalWidth < 99 && image.naturalHeight < 99){
-    element.attr("src", "");
-    element.parent().addClass('nonIMG');
-  }
 }
 
 function createArticle(currentArticle){
   var articleFormated = '<div class="article" >';
   articleFormated += '<h3>'+displayText(currentArticle.title)+'</h3>';
-  articleFormated += '<div><div class="img-container"><img class="article-img" src="'+displayText(currentArticle.urlToImage)+'"></img></div>';
+  articleFormated += '<div><div class="img-container">'+createImgContainer(displayText(currentArticle.urlToImage))+'</div>';
   articleFormated += '<p class="mt0">'+displayDate(currentArticle.publishedAt)+'</p>';
   articleFormated += '<p>'+displayText(currentArticle.description)+'</p></div></div>';
   return articleFormated;
+}
+function createImgContainer(src){
+  if(src)
+    return '<img class="article-img" src="'+src+'"></img>';
+  else
+    return '<img class="article-img nonIMG" src=""></img>';
 }
 
 function displayDate(date){
